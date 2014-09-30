@@ -1,0 +1,7 @@
+BOARD_TAG    = atmega328
+ARDUINO_PORT = /dev/ttyUSB1
+ARDUINO_LIBS =  Ethernet SPI
+ARDUINO_SKETCHBOOK = $(HOME)/arduino
+TEMP_DIR = $(HOME)/temp
+PROJECT_NAME = NewtifryPro-arduino
+include $(HOME)/Arduino-Makefile/arduino-mk/Arduino.mk
