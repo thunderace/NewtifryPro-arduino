@@ -17,6 +17,15 @@ void buildMessage(		char *deviceId,
 						char *source, 
 						char  *message);
 void sendToNewtifryPro(char *apikey);
+
+char *encode(char *input) {
+	int len = strlen(input);
+	char *encodeBuffer = new char[base64_enc_len(len)];
+	base64_encode(encodeBuffer, input, len);
+	return encodeBuffer;
+}
+
+/*
 char *encodeBuffer = NULL;
 char *encode(char *input) {
 	if (encodeBuffer != NULL) {
@@ -27,7 +36,7 @@ char *encode(char *input) {
 	base64_encode(encodeBuffer, input, len);
 	return encodeBuffer;
 }
-
+*/
   /////////////////
  // MODIFY HERE //
 /////////////////
@@ -37,6 +46,7 @@ byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x19 };   // Be sure this address i
 //and your data
 char APIKey[] = "YOUR_API_KEY"; 
 char deviceID[] = "YOUR_DEVICE_ID";
+
 // Debug mode
 boolean DEBUG = true;
   //////////////
